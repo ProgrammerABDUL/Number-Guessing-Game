@@ -15,14 +15,14 @@ how_to_play = """\n\033[1m📖 How to Play: -\033[0m
 3. \033[1m⏳ Limited attempts:\033[0m You have a total of 5 attempts to guess the correct number.
 4. \033[1m🏆 Win or Lose:\033[0m If you guess the number within 5 attempts, you win! Otherwise, you lose, and the game will reveal the secret number."""
 
-# Options
-options = """\n\033[1m🎮 Options: -\033[0m
+# Menu
+menu = """\n\033[1m🎮 Game Menu: -\033[0m
 1. 🎲 Start Game
 2. 📖 How to Play
 3. 🏆 View High Scores
 4. 🚪 Exit
 """
-print(options)
+print(menu)
 
 # Game Logic
 def Game():
@@ -78,5 +78,5 @@ while navigation != "4":
     else:
         print("Invalid Input")
     
-    print(options)
+    print(menu)
     navigation = int(input("Navigate: "))
