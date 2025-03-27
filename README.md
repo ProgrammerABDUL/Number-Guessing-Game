@@ -35,7 +35,8 @@ The Number Guessing Game is a simple CLI-based game where the player tries to gu
 6. 🏆 Win by guessing correctly or try again if you lose
 
 ## 🔧 Requirements
-- Python 3.x
+- Python 3.12.2
+- Visual Studio Code
 
 ## 📥 Installation
 1. Clone the repository:
