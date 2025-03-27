@@ -6,7 +6,7 @@ game_title = "\033[1m🎮 Number Guessing Game🎲\033[0m\n"
 print(game_title)
 
 # GameInfo
-GameInfo: dict = {"Developer": "Abdul Rehman Jiwani", "Version":"0.0.2"}
+GameInfo: dict = {"👨‍💻 Developer": "Abdul Rehman Jiwani", "📌 Version":"0.0.2"}
 
 # Name
 name =  input("Enter your name: ")
@@ -26,8 +26,9 @@ how_to_play = """\n\033[1m📖 How to Play: -\033[0m
 menu = """\n\033[1m🎮 Game Menu: -\033[0m
 1. 🎲 Start Game
 2. 📖 How to Play
+3. 🎯 Levels
 4. 🏆 View High Scores
-5.  Game Info
+5. ℹ️ Game Info
 6. 🚪 Exit
 """
 print(menu)
@@ -38,12 +39,12 @@ def Game():
     attempts = 5
 
     # Level Functionality starts...
-    print("""\nChoose a Level:
-1. Easy
-2. Medium
-3. Hard""")
+    print("""\n🎯 Choose a Level:
+1. 🟢 Easy
+2. 🟡 Medium
+3. 🔴 Hard""")
     
-    Level = str(input("\nSelect any (E/M/H): "))
+    Level = str(input("\n🎮 Select any (E/M/H): "))
     
     # Easy Level
     if Level == "E" or Level == "e":
@@ -83,11 +84,11 @@ def Game():
         guess = int(input("\nGuess the number: "))
     
     if guess == random_number:
-        print(f"\n🎉 Congrats! You won 🏆, You guessed \033[1m{guess}\033[0m correctly in \033[1m{attempts}\033[0m attempt!")
-        print(f"Thanks for playing! Goodbye {name} 👋")
+        print(f"\n🎉 Congrats! You won 🏆, You guessed \033[1m{guess}\033[0m correctly in \033[1m{attempts}\033[0m attempt")
+        print(f"👋 Thanks for playing! Goodbye {name}!")
 
     elif guess != random_number:
-        print(f"😢 You lost!, The number was {random_number}")
+        print(f"😢 You lost! The number was {random_number}")
         chance = input("🔄 Wanna try Again? (Y/N): ")
 
         if chance == "Y" or chance == "y":
