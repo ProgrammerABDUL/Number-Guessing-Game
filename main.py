@@ -26,10 +26,9 @@ how_to_play = """\n\033[1m📖 How to Play: -\033[0m
 menu = """\n\033[1m🎮 Game Menu: -\033[0m
 1. 🎲 Start Game
 2. 📖 How to Play
-3. 🎯 Levels
-4. 🏆 View High Scores
-5. ℹ️ Game Info
-6. 🚪 Exit
+3. 🏆 View High Scores
+4. ℹ️ Game Info
+5. 🚪 Exit
 """
 print(menu)
 
@@ -102,7 +101,7 @@ def Game():
 # Navigation
 navigation = int(input("Navigate: "))
 
-while navigation != "6":
+while navigation != "5":
     if navigation == 1:
         Game()
         break
@@ -116,13 +115,11 @@ while navigation != "6":
             print("Ok waiting....")
             time.sleep(5.0)
     elif navigation == 3:
-        print("Levels")
-    elif navigation == 4:
         print("\nHigh Score feature will be added soon.")
         print("Redirecting to Game Menu...")
-    elif navigation == 5:
+    elif navigation == 4:
         print(GameInfo)
-    elif navigation == 6:
+    elif navigation == 5:
         exit()
     else:
         print("Invalid Input")
