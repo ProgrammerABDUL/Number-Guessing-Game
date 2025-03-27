@@ -2,11 +2,11 @@ import random
 import time
 
 # Title
-game_title = "\033[1m🎮 Number Guessing Game🎲\033[0m\n"
+game_title = "\033[1m🎮 Number Guessing Game\033[0m\n"
 print(game_title)
 
 # GameInfo
-GameInfo: dict = {"👨‍💻 Developer": "Abdul Rehman Jiwani", "📌 Version":"0.0.2"}
+GameInfo: dict = {"💻 Developer": "Abdul Rehman Jiwani", "📌 Version":"0.0.2"}
 
 # Name
 name =  input("Enter your name: ")
@@ -27,7 +27,7 @@ menu = """\n\033[1m🎮 Game Menu: -\033[0m
 1. 🎲 Start Game
 2. 📖 How to Play
 3. 🏆 View High Scores
-4. ℹ️ Game Info
+4. ℹ️  Game Info
 5. 🚪 Exit
 """
 print(menu)
@@ -48,25 +48,29 @@ def Game():
     # Easy Level
     if Level == "E" or Level == "e":
         game_level = "Easy"
-        print(f"\nPlayer {name}, you selected the {game_level} level. Now, Guess a number between 1 to 100 in {attempts} attempts. Are you ready {name}? Let's get started! 🚀")
+        no_of_attempts = 5
+        print(f"\nPlayer \033[1m{name}\033[0m, you selected the \033[1m{game_level} level\033[0m. Now, \033[1mGuess the number between 1 to 100 in {attempts} attempts.\033[0m Are you ready \033[1m{name}\033[0m? Let's get started! 🚀")
 
     # Medium Level
     elif Level == "M" or Level == "m":
         game_level = "Medium"
         random_number = random.randint(21, 50)
         attempts = 3
-        print(f"\nPlayer {name}, you selected the {game_level} level. Now, Guess a number between 21 to 50 in {attempts} attempts. Are you ready {name}? Let's get started! 🚀")
+        no_of_attempts = 3
+        print(f"\nPlayer \033[1m{name}\033[0m, you selected the \033[1m{game_level} level\033[0m. Now, \033[1mGuess the number between 21 to 50 in {attempts} attempts.\033[0m Are you ready \033[1m{name}\033[0m? Let's get started! 🚀")
 
     # Hard Level
     elif Level == "H" or Level == "h":
         game_level = "Hard"
         random_number = random.randint(1, 10)
         attempts = 2
-        print(f"\nPlayer {name}, you selected the {game_level} level. Now, Guess a number between 1 to 10 in {attempts} attempts. Are you ready {name}? Let's get started! 🚀")
+        no_of_attempts = 2
+        print(f"\nPlayer \033[1m{name}\033[0m, you selected the \033[1m{game_level} level\033[0m. Now, \033[1mGuess the number between 1 to 10 in {attempts} attempts.\033[0m Are you ready \033[1m{name}\033[0m? Let's get started! 🚀")
     
     else:
         print("Invalid Input")
     
+    print(random_number)
     # Game Functionality stars....
     print(f"\n\033[1m\033[3m🎮 Game has started at its {game_level} Level!\033[0m\033[0m\n")
 
@@ -83,8 +87,9 @@ def Game():
         guess = int(input("\nGuess the number: "))
     
     if guess == random_number:
+        attempts = no_of_attempts - attempts
         print(f"\n🎉 Congrats! You won 🏆, You guessed \033[1m{guess}\033[0m correctly in \033[1m{attempts}\033[0m attempt")
-        print(f"👋 Thanks for playing! Goodbye {name}!")
+        print(f"Thanks for playing {name}! Goodbye 👋")
 
     elif guess != random_number:
         print(f"😢 You lost! The number was {random_number}")
@@ -93,7 +98,7 @@ def Game():
         if chance == "Y" or chance == "y":
             Game()
         elif chance == "N" or chance == "n":
-            print(f"Thanks for playing! Goodbye {name} 👋")
+            print(f"Thanks for playing {name}! Goodbye 👋")
         else:
             print("Invalid Input")
 
@@ -117,6 +122,7 @@ while navigation != "5":
     elif navigation == 3:
         print("\nHigh Score feature will be added soon.")
         print("Redirecting to Game Menu...")
+        time.sleep(0.5)
     elif navigation == 4:
         print(GameInfo)
     elif navigation == 5:
